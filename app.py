@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans, DBSCAN
 from sklearn.decomposition import PCA
 from utils import preprocess_text
 
-st.title("📊 Interactive Text Clustering App")
+st.title("Interactive Text Clustering App")
 
 uploaded_file = st.file_uploader("Upload a text file", type=["txt"])
 
@@ -31,7 +31,7 @@ if uploaded_file:
 
     df = pd.DataFrame({"Text": text_data[:len(labels)], "Cluster": labels})
 
-    st.subheader("📌 Clustered Text Output")
+    st.subheader("Clustered Text Output")
     st.dataframe(df)
 
     # Visualization using PCA
@@ -42,3 +42,4 @@ if uploaded_file:
     plt.scatter(X_pca[:, 0], X_pca[:, 1], c=labels)
     plt.title("Text Clustering Visualization")
     st.pyplot(plt)
+
